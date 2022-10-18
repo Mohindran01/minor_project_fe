@@ -51,25 +51,25 @@ const Ecommerce = () => {
       }
     ],
     });
-    const res=()=>{
-      setData({
-        labels:props.drug,
-        datasets:[
-          {
-            label:"Mean Normalized Score",
-            data:props.score,
-            backgroundColor:'red',
-            borderColor:'green',
-            tension:0.4,
-            fill:true,
-            pointStyle:'rect',
-            pointBorderColor:'blue',
-            pointBackgroundColor:'#fff',
-            showLine:true
-          }
-        ]
-        })
-    }
+    // const res=()=>{
+    //   setData({
+    //     labels:props.drug,
+    //     datasets:[
+    //       {
+    //         label:"Mean Normalized Score",
+    //         data:props.score,
+    //         backgroundColor:'red',
+    //         borderColor:'green',
+    //         tension:0.4,
+    //         fill:true,
+    //         pointStyle:'rect',
+    //         pointBorderColor:'blue',
+    //         pointBackgroundColor:'#fff',
+    //         showLine:true
+    //       }
+    //     ]
+    //     })
+    // }
   console.log(ans)
   const { currentColor, currentMode } = useStateContext();
   

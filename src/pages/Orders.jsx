@@ -67,9 +67,9 @@ const Orders = () => {
         console.log(res.text);
       });
     };
-    const toaddress=(event)=>{
-      setemailid(event.target.value)
-    }
+    // const toaddress=(event)=>{
+    //   setemailid(event.target.value)
+    // }
     const handleChangeInput = (id, event) => {
       const newInputFields = inputFields.map(i => {
         if(id === i.id) {
