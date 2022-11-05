@@ -12,7 +12,7 @@ const Employees = () => {
   console.log(data)
   const editing = { allowDeleting: true, allowEditing: true };
   const getPatientData = async () => {
-    const res = await fetch("http://65.0.233.87:5000/getpatient");
+    const res = await fetch("https://65.0.233.87:5000/getpatient");
     const data = await res.json();
     // console.log(data)
     setData(data);
