@@ -13,6 +13,7 @@ import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropd
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
 import Lines from './Lines'
+import { condition,getconditionbydrug } from '../data/url';
 import { Line } from 'react-chartjs-2';
 import {Chart as ChartJS, Title, Tooltip, LineElement, Legend, CategoryScale, LinearScale, PointElement, Filler} from 'chart.js';
 ChartJS.register(
@@ -79,7 +80,7 @@ const Ecommerce = () => {
     const labelSet = []
            const dataSet1 = [];
            const dataSet2 = [];
-    const res = await fetch(`http://65.0.233.87:5000/drug?condition=${event.target.value}`);
+    const res = await fetch(`${getconditionbydrug}?condition=${event.target.value}`);
     const data = await res.json();
     for (const val of data) {
       // dataSet1.push(val.drug_name);
@@ -131,7 +132,7 @@ const Ecommerce = () => {
     // setData(data);
   };
   const getAnswer = async () => {
-    const res = await fetch("http://65.0.233.87:5000/condition");
+    const res = await fetch(condition);
     const data = await res.json();
     // console.log(data)
     setAns(data);

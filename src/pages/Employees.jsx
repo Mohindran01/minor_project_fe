@@ -3,7 +3,7 @@ import { ColumnDirective, ColumnsDirective, Filter, GridComponent, Group, Inject
 
 import { employeesData, employeesGrid } from '../data/dummy';
 import { Header } from '../components';
-
+import { getpatient } from '../data/url';
 const Employees = () => {
   const toolbarOptions = ['Delete'];
   const pageSettings = { pageSize: 6 };
@@ -12,7 +12,7 @@ const Employees = () => {
   console.log(data)
   const editing = { allowDeleting: true, allowEditing: true };
   const getPatientData = async () => {
-    const res = await fetch("https://65.0.233.87:5000/getpatient");
+    const res = await fetch(getpatient);
     const data = await res.json();
     // console.log(data)
     setData(data);
