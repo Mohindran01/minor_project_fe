@@ -64,7 +64,7 @@ const Customers = () => {
   // console.log(data)
   
   const getPatientData = async () => {
-    const res = await fetch("http://localhost:5000/getpatient");
+    const res = await fetch("http://65.0.233.87:5000/getpatient");
     const data = await res.json();
     // console.log(data)
     setDatas(data);
@@ -77,7 +77,7 @@ const Customers = () => {
 
   },[])
   const handleChange = async (event ) => {
-    const res = await fetch(`http://localhost:5000/getpatientbyid?id=${event.target.value}`);
+    const res = await fetch(`http://65.0.233.87:5000/getpatientbyid?id=${event.target.value}`);
     const patientdata = await res.json();
     setAge(event.target.value);
     
@@ -130,7 +130,7 @@ const Customers = () => {
   
   };
   const getAnswer = async () => {
-    const res = await fetch("http://localhost:5000/condition");
+    const res = await fetch("http://65.0.233.87:5000/condition");
     const data = await res.json();
     // console.log(data)
     setAns(data);
@@ -163,7 +163,7 @@ const Customers = () => {
     const labelSet = []
            const dataSet1 = [];
            const dataSet2 = [];
-    const res = await fetch(`http://localhost:5000/drug?condition=${event.target.value}`);
+    const res = await fetch(`http://65.0.233.87:5000/drug?condition=${event.target.value}`);
     const data = await res.json();
     for (const val of data) {
       // dataSet1.push(val.drug_name);

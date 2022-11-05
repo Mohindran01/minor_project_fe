@@ -60,7 +60,7 @@ const Orders = () => {
       setfilename(file.name)
       formData.append("file", file);
   
-      fetch("http://localhost:5000/upload", {
+      fetch("http://65.0.233.87:5000/upload", {
         method: "POST",
         body: formData,
       }).then((res) => {
@@ -84,7 +84,7 @@ const Orders = () => {
       
       
       console.log(emailid)
-      const res = await fetch(`http://localhost:5000/sendemail?emailid=${emailid}&filename=${filename}`);
+      const res = await fetch(`http://65.0.233.87:5000/sendemail?emailid=${emailid}&filename=${filename}`);
       const data = await res.json();
       console.log(data)
       alert("EMAIL SENT")
@@ -92,13 +92,13 @@ const Orders = () => {
 
     }
     const getPatientData = async () => {
-      const res = await fetch("http://localhost:5000/getpatient");
+      const res = await fetch("http://65.0.233.87:5000/getpatient");
       const data = await res.json();
       // console.log(data)
       setData(data);
     };
     const getemail = async () => {
-      const res = await fetch("http://localhost:5000/getpatient");
+      const res = await fetch("http://65.0.233.87:5000/getpatient");
       const data = await res.json();
       // console.log(data)
       setemaildata(data);
@@ -117,7 +117,7 @@ const Orders = () => {
       // const labelSet = []
       //        const dataSet1 = [];
       //        const dataSet2 = [];
-      const res = await fetch(`http://localhost:5000/getpatientbyemail?emailid=${event.target.value}`);
+      const res = await fetch(`http://65.0.233.87:5000/getpatientbyemail?emailid=${event.target.value}`);
       const data = await res.json();
       console.log(data)
       // for (const val of data) {
@@ -128,7 +128,7 @@ const Orders = () => {
   
     }
     const handleChange = async (event ) => {
-      const res = await fetch(`http://localhost:5000/getpatientbyid?id=${event.target.value}`);
+      const res = await fetch(`http://65.0.233.87:5000/getpatientbyid?id=${event.target.value}`);
       const patientdata = await res.json();
       setAge(event.target.value);
       setPatientdata(patientdata)
